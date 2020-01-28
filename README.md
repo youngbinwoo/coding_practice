@@ -1,4 +1,5 @@
 # python_cording
-python_cording_practice
 
-기초 100제
+
+python_cording
+cord_up 기초 100제
