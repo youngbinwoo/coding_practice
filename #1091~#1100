@@ -47,6 +47,16 @@
       따라서, 모든 문제들에는 정답이 하나뿐만이 아니다.
       새로운, 더 빠른, 더 간단한 방법을 다양하게 생각해보고 도전해 볼 수 있다.
       
-      ->
+      ->a,b,c=input().split()
+        a=int(a)
+        b=int(b)
+        c=int(c) 
+        t_num = 1   #t_num=0 으로 설정하면 0/0이 되기 때문에 t_num=1로 설정해야한다.
+        while t_num:
+           if t_num % a== 0 and t_num % b == 0 and t_num % c==0:
+              print('%d' % t_num)
+              break
+           t_num = t_num+1
+
       
 
