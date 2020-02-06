@@ -87,7 +87,16 @@
       int a[3]={1,2,3}; //1,2,3 이 순서대로 저장된다.
       int a[3]={1,2,3,4}; //방을 3개 만들고 값을 4개를 집어넣어라? 오류 발생!
       
-      ->
+      ->a=input()
+        b=input().split()
+        a=int(a)
+        list=[]
+        for i in range(24):
+           list.append(0)
+        for i in range(0,a):
+           list[int(b[i])]+=1
+        for i in range(1,24):
+           print(list[i])
 
 
 
