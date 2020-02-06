@@ -126,7 +126,45 @@
       배열에 순서대로 기록해 두면, 기록된 내용을 모두 검사해 가장 작은 값을 찾아내면 된다.
       그런데, 가장 작은 값은 어떻게 어떤 것과 비교하고 찾아야 할까?
       
-      ->
+      ->a=input()
+        b=input().split()
+        a=int(a)
+        arr=[]
+        for i in range(a):
+            arr.append(int(b[i]))
+        min=int(arr[0])
+        for i in range(a):
+            if min>arr[i]:
+                min=arr[i]
+        print(min)    
+
 
       
+#1096 : [기초-2차원배열] 바둑판에 흰 돌 놓기
+      기숙사 생활을 하는 학교에서 어떤 금요일(전원 귀가일)에는 모두 집으로 귀가를 한다.
+      오랜만에 집에 간 영일이는 아버지와 함께 두던 매우 큰 오목에 대해서 생각해 보다가
+      "바둑판에 돌을 올린 것을 프로그래밍 할 수 있을까?"하고 생각하였다.
+      바둑판(19 * 19)에 n개의 흰 돌을 놓는다고 할 때,
+      n개의 흰 돌이 놓인 위치를 출력하는 프로그램을 작성해보자.
+      참고
+      가로번호, 세로번호를 사용할 수 있는 2차원 배열을 사용하면
+      이러한 형태를 쉽게 기록하고 사용할 수 있다. 물론 더 확장한 n차원 배열도 만들 수 있다.
+      
+      ->matrix=[]
+        for i in range(20):
+           matrix.append([])
+           for j in range(20):
+              matrix[i].append(0)
+
+        a=int(input())        
+        for i in range(a):
+           x,y=input().split()
+           matrix[int(x)][int(y)]=1
+           
+        for i in range(1,20):
+           for j in range(1,20):
+              print(matrix[i][j],end=' ')
+            print()    
+
+
 
