@@ -177,7 +177,36 @@
       가로 번호, 세로 번호를 사용할 수 있는 2차원 배열을 사용하면
       이러한 형태를 쉽게 기록하고 사용할 수 있다. 물론 더 확장한 n차원 배열도 만들 수 있다.
       
-      ->
+      ->matrix=[]
+      for i in range(20):
+          matrix.append([])
+          for j in range(20):
+              matrix[i].append(0)
+      
+      for i in range(19):
+          a=input().split()
+          for j in range(19):
+              matrix[i+1][j+1]=int(a[j])
+
+      n=int(input()) 
+      for i in range(n):
+          x,y=input().split()
+          for j in range(1,20):
+        
+        if matrix[j][int(y)]==0:
+            matrix[j][int(y)]=1
+        else:
+            matrix[j][int(y)]=0
+        
+        if matrix[int(x)][j]==0:
+            matrix[int(x)][j]=1
+        else:
+            matrix[int(x)][j]=0
+            
+      for i in range(1,20):
+          for j in range(1,20):
+              print(matrix[i][j],end=' ')
+      print()  
       
       
 
