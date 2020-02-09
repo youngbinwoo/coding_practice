@@ -5,5 +5,5 @@
 
 
 
-1) 기본 알고리즘 문제 (100제)
-2) 그리디 알고리즘 문제 (200제)
+1) Basic algorithm
+2) Greedy algorithm 
