@@ -1,0 +1,174 @@
+#1061 : [기초-비트단위논리연산] 비트단위로 OR 하여 출력하기
+      입력된 정수 두 개를 비트단위로 or 연산한 후 그 결과를 정수로 출력해보자.
+      비트단위(bitwise) 연산자 |(or, vertical bar, 버티컬바)를 사용하면 된다.
+      
+      ->a,b=input().split()
+        a=int(a)
+        b=int(b)
+       print(a|b)
+
+
+
+#1062 : [기초-비트단위논리연산] 비트단위로 XOR 하여 출력하기
+      입력된 정수 두 개를 비트단위로 xor 연산한 후 그 결과를 정수로 출력해보자.
+      비트단위(bitwise) 연산자 ^(xor, circumflex/caret, 서컴플렉스/카릿)를 사용하면 된다.
+      
+      -> a,b=input().split()
+         a=int(a)
+         b=int(b)
+         print(a^b)
+         
+         
+                  
+#1063 : [기초-삼항연산] 두 정수 입력받아 큰 수 출력하기
+
+      입력된 두 정수 a, b 중 큰 값을 출력하는 프로그램을 작성해보자.
+      단, 조건문을 사용하지 않고 3항 연산자 ? 를 사용한다.
+      
+      ->a,b=input().split()
+        x=int(a)
+        y=int(b)
+        if x>y:
+           print(x)
+        else:
+           print(y)
+           
+
+
+#1064 : [기초-삼항연산] 정수 3개 입력받아 가장 작은 수 출력하기
+      입력된 세 정수 a, b, c 중 가장 작은 값을 출력하는 프로그램을 작성해보자.
+      단, 조건문을 사용하지 않고 3항 연산자 ? 를 사용한다.
+      
+      ->a,b,c=input().split()
+        x=int(a)
+        y=int(b)
+        z=int(c)
+        q=min([x,y,z])
+        print(q)
+        
+        
+        
+#1065 : [기초-조건/선택실행구조] 정수 3개 입력받아 짝수만 출력하기      
+      세 정수 a, b, c가 입력되었을 때, 짝수만 출력해보자.
+      
+      ->a,b,c=input().split()
+        x=int(a)
+        y=int(b)
+        z=int(c)
+        if x%2==0:
+          print(x)
+        if y%2==0:
+           print(y)
+        if z%2==0:
+          print(z)
+
+
+
+#1066 : [기초-조건/선택실행구조] 정수 3개 입력받아 짝/홀 출력하기
+      세 정수 a, b, c가 입력되었을 때, 짝(even)/홀(odd)을 출력해보자.
+     
+      ->a,b,c=input().split()
+        x=int(a)
+        y=int(b)
+        z=int(c)
+        if x%2==0:
+           print('even')
+        else:
+           print('odd')
+        if y%2==0:
+           print('even')
+        else:
+           print('odd')
+        if z%2==0:
+           print('even')
+        else:
+           print('odd')
+           
+           
+           
+#1067 : [기초-조건/선택실행구조] 정수 1개 입력받아 분석하기  
+      정수 1개가 입력되었을 때, 음(minus)/양(plus)과 짝(even)/홀(odd)을 출력해보자.
+      
+      ->a=input()
+        x=int(a)
+       if x<0:
+          print('minus')
+       else:
+          print('plus')
+       if x%2==0:
+          print('even')
+       else:
+          print('odd')
+          
+          
+          
+#1068 : [기초-조건/선택실행구조] 정수 1개 입력받아 평가 출력하기        
+      점수(정수, 0 ~ 100)를 입력받아 평가를 출력해보자.
+
+      평가 기준
+      점수 범위 : 평가
+      90 ~ 100 : A
+      70 ~   89 : B
+      40 ~   69 : C
+      0 ~   39 : D
+      로 평가되어야 한다
+      
+      ->x=input()
+        x=int(x)
+        if 90<=x<=100:
+           print('A')
+        if 70<=x<=89:
+           print('B')
+        if 40<=x<=69:
+           print('C')
+        if 0<=x<=39:
+           print('D')
+           
+           
+           
+#1069 : [기초-조건/선택실행구조] 평가 입력받아 다르게 출력하기
+      평가를 문자(A, B, C, D, ...)로 입력받아 내용을 다르게 출력해보자.
+      평가 내용
+      평가 : 내용
+      A : best!!!
+      B : good!!
+      C : run!
+      D : slowly~
+      나머지 문자들 : what?
+      
+      ->a=input()
+        a=str(a)
+        if a=='A':
+           print('best!!!')
+        elif a=='B':
+           print('good!!')
+        elif a=='C':
+           print('run!')
+        elif a=='D':
+           print('slowly~')
+        else:
+           print('what?')
+           
+           
+           
+# 1070 : [기초-조건/선택실행구조] 월 입력받아 계절 출력하기  
+       월이 입력될 때 계절 이름이 출력되도록 해보자.
+       
+       예
+       월 : 계절 이름
+       12, 1, 2 : winter
+       3, 4, 5 : spring
+       6, 7, 8 : summer
+       9, 10, 11 : fall
+
+       ->a=input()
+         x=int(a)
+         if x==12 or x==1 or x==2 :
+             print("winter")
+         elif x==3 or x==4 or x==5 :
+             print("spring")
+         elif x==6 or x==7 or x==8 :
+             print("summer")
+         elif x==9 or x==10 or x==11 :
+             print("fall")
+             
