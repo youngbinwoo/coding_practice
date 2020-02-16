@@ -31,4 +31,16 @@ ex3)
 
 -정답
 
+a=input()
+N=list(map(int,list(a)))
+def A(N):
+    if N.count(0)==0 or sum(N)%3!=0:
+        return -1
+    N.sort(reverse=True)
+    return''.join(str(e) for e in N)
+
+ans=A(N)
+print(ans)
+            
+
 
