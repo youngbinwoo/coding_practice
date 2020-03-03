@@ -28,3 +28,23 @@ k개의 로프를 사용하여 중량이 w인 물체를 들어올릴 때, 각각
 
 20
 
+- 추가 사항
+
+문제가 잘 이해되지 않았었는데 그냥 단순하다. 만약 루프가 2개 이고 100g의 물체를 들어올린다고 할 때, 
+각각 50g 씩 무게를 나눠들 수 있다는 것. 
+
+- 답
+
+N=int(input())
+nums=[]
+ans=0
+for _ in range(N):
+    nums.append(int(input()))
+
+nums.sort(reverse=True)
+    
+for i in range(N):
+    if ans<nums[i]*(i+1):
+        ans=nums[i]*(i+1)
+print(ans)    
+
