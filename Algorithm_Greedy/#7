@@ -38,4 +38,39 @@ TAAGATAC
 
 - 답
 
+N,M=map(int,input().split())
+DNA=[]
+ans=''
+hd=0
+
+
+for i in range(N):
+    DNA.append(input())
+    
+for i in range(M):
+    B=[0,0,0,0]
+    for j in range(N):
+        if DNA[j][i]=='A':
+            B[0]+=1
+        elif DNA[j][i]=='C':
+            B[1]+=1
+        elif DNA[j][i]=='G':
+            B[2]+=1
+        elif DNA[j][i]=='T':
+            B[3]+=1
+            
+    Max=max(B) 
+    C=B.index(Max)
+    if C==0:
+        ans+='A'
+    elif C==1:
+        ans+='C'
+    elif C==2:
+        ans+='G'
+    elif C==3:
+        ans+='T'
+    hd+=N-Max
+        
+print(ans)
+print(hd)
 
