@@ -1,0 +1,6 @@
+import numpy as np
+c = np.array([6, 2, 4])
+def vec_size(b):
+    return sum(x * y for x, y in zip(b, b))**0.5
+d = vec_size(c)
+print(d)
