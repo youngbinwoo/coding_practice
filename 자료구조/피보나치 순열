@@ -20,4 +20,8 @@ def solution(x):
         return 1
     else:
         return solution(x-2)+ solution(x-1)
+        
+        
+* 재귀 알고리즘을 사용했다.
+효율성이 떨어지는 측면도 존재하지만 유용하게 
 
