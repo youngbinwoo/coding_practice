@@ -1,0 +1,63 @@
+1) 연결 리스트 연산_원소의 삽입
+   def insertAt(self,pos,newNode):
+   
+   :pos가 가르키는 위치에 (1<=pos<=nodeCount+1)
+   newNode를 삽입하고
+   성공/실패에 따라 True/False 를 리턴
+   
+   L.insertAt(pos,newNode)
+   
+   def insertAt(self,pos,newNode):
+       if pos<1 or pos>self.nodeCount+1:
+           return False
+        if pos=1:
+            newNode.next=self.head
+            self.head=newNode
+        else:
+           prev=self.getAt(pos-1)
+           newNode.next=prev.next
+           prev.next=newNode
+           
+        if pos=self.nodeCount+1:
+            self.tail=newNode
+            
+        self.nodeCount+=1
+        return True
+            
+        
+       
+       -> 코드 구현 주의사항
+       (1) 삽입하려는 위치가 리스트 맨 앞일 때
+           prev 없음
+           Head 조정 필요
+       (2) 삽입하려는 위치가 리스트 맨 끝일 때
+           Tail 조정 필요
+           
+
+2) 삽입하려는 위치가 리스트 맨 끝일 때, pos=self.nodeCount+1
+
+   
+   def insertAt(self,pos,newNode):
+       if pos<1 or pos>self.nodeCount+1:
+           return False
+        if pos=1:
+            newNode.next=self.head
+            self.head=newNode
+        else:
+            if pos= self.nodeCount+1:
+                prev=self.tail
+            else:
+                prev=self.getAt(pos-1)
+                ewNode.next=prev.next
+                prev.next=newNode
+           
+        if pos=self.nodeCount+1:
+            self.tail=newNode
+            
+        self.nodeCount+=1
+        return True
+        
+        
+            
+   
+   
