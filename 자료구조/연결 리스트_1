@@ -63,6 +63,44 @@ class LinkedList:
 예를 들어, LinkedList L 에 들어 있는 노드들이 43 -> 85 -> 62 라면, 올바른 리턴 값은 [43, 85, 62] 입니다.
 이 규칙을 적용하면, 빈 연결 리스트에 대한 순회 결과로 traverse() 메서드가 리턴해야 할 올바른 결과는 [] 입니다.
 [참고] 실행 을 눌렀을 때 통과하는 것은 아무 의미 없습니다.
+
+
+답)
+
+class Node:
+    def __init__(self, item):
+        self.data = item
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.nodeCount = 0
+        self.head = None
+        self.tail = None
+
+    def getAt(self, pos):
+        if pos < 1 or pos > self.nodeCount:
+            return None
+        i = 1
+        curr = self.head
+        while i < pos:
+            curr = curr.next
+            i += 1
+        return curr
+
+    def traverse(self):
+        ans=[]
+        curr = self.head
+        while curr !=None:
+            ans.append(curr.data)
+            curr = curr.next
+        return ans
+
+
+
+# 이 solution 함수는 그대로 두어야 합니다.
+def solution(x):
+    return 0
  
  
   
