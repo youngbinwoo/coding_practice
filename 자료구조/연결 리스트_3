@@ -114,6 +114,11 @@ class LinkedList:
 		if L.tail:
 			self.tail = L.tail
 		self.nodeCount += L.nodeCount
+		
+
+문제)
+
+
 
     
  
