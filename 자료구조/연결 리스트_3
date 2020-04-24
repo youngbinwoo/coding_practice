@@ -5,4 +5,30 @@
 2) 조금 변형된 연결 리스트
 맨 앞에 dummy node를 추가한다. dummy node는 0번
 
+3) 메서드 insertAt() 구현
+   
+   def insertAt(self,pos,newNode):
+   
+   ->이미 구현한 insertAfter()를 호출하여 이용하는 것으로
+   (1) pos 범위 조건 확인
+   (2) pos==1 인 경우에는 head 뒤에 새 node 삽입
+   (3) pos==nodeCount+1 인 경우는 prev<-tail
+   (4) 그렇지 않은 경우에는 prev<-getAt(..)
+   
+4) 연결 리스트 연산_원소의 삭제
 
+   def popAfter(self,prev):
+   
+   prev의 다음 node를 삭제하고
+   그 node의 data를 리턴
+   
+5) 코드 구현 주의사항
+   (1) prev가 마지막 node 일 때 (prev.next==None)
+       ->삭제할 node가 없음
+       ->return None
+       
+   (2) 리스트 맨 끝의 node를 삭제할 때(curr.next==None)
+       -> Tail 조정 필요
+       
+       
+   
