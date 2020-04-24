@@ -172,7 +172,9 @@ class LinkedList:
        self.nodeCount+=L.nodeCount
        
        
-문제) 연결 리스트 노드 삭제
+문제)
+
+연결 리스트 노드 삭제
 
 제 8 강에서 소개된 추상적 자료구조 LinkedList 클래스의 메서드로서 popAt() 메서드를 강의 내용에 소개된 요구조건을 만족시키도록 구현하세요.
 초기 코드로 들어 있는 것은 solution() 함수를 포함하여 다른 부분은 수정하지 말고, def popAt(self, pos): 의 메서드 몸체만 구현하세요.
@@ -180,6 +182,104 @@ class LinkedList:
 이렇게 하기 위한 코드는 raise IndexError 입니다.
 *** 2020년 3월 23일, 학습자의 질문에 답하면서 보니 특정한 경우의 정확성을 올바르게 검증하지 못하는 경우가 발견되어 
 테스트 케이스 4 번을 추가했습니다.
+
+답)
+
+class Node:
+
+    def __init__(self, item):
+        self.data = item
+        self.next = None
+
+
+class LinkedList:
+
+    def __init__(self):
+        self.nodeCount = 0
+        self.head = None
+        self.tail = None
+
+
+    def getAt(self, pos):
+        if pos < 1 or pos > self.nodeCount:
+            return None
+
+        i = 1
+        curr = self.head
+        while i < pos:
+            curr = curr.next
+            i += 1
+
+        return curr
+
+
+    def insertAt(self, pos, newNode):
+        if pos < 1 or pos > self.nodeCount + 1:
+            return False
+
+        if pos == 1:
+            newNode.next = self.head
+            self.head = newNode
+
+        else:
+            if pos == self.nodeCount + 1:
+                prev = self.tail
+            else:
+                prev = self.getAt(pos - 1)
+            newNode.next = prev.next
+            prev.next = newNode
+
+        if pos == self.nodeCount + 1:
+            self.tail = newNode
+
+        self.nodeCount += 1
+        return True
+
+
+    def popAt(self, pos):
+        if pos<1 or pos>self.nodeCount:
+            raise IndexError
+        
+        curr=self.getAt(pos)
+        # 앞쪽
+        if pos==1:
+            if self.nodeCount==1:
+                curr=self.head.data
+                self.head=None
+                self.tail=None
+            else:
+                curr=self.head.data
+                self.head=self.head.next
+        else:
+            # 끝
+            if pos==self.nodeCount:
+                prev=self.getAt(pos-1)
+                curr=prev.next.data
+                prev.next=None
+                self.tail=prev
+            else:
+                #중간
+                prev=self.getAt(pos-1)
+                curr=prev.next.data
+                prev.next=prev.next.next
+        
+        self.nodeCount-=1
+        return curr       
+
+
+    def traverse(self):
+        result = []
+        curr = self.head
+        while curr is not None:
+            result.append(curr.data)
+            curr = curr.next
+        return result
+
+
+def solution(x):
+    return 0
+
+
 
 
        
