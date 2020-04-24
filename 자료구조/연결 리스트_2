@@ -1,7 +1,7 @@
 1) 연결 리스트 연산_원소의 삽입
    def insertAt(self,pos,newNode):
    
-   :pos가 가르키는 위치에 (1<=pos<=nodeCount+1)
+   :pos가 가르키는 위치에 (1<=pos<=nodeCount+1) -> prev가 가리키는 node의 
    newNode를 삽입하고
    성공/실패에 따라 True/False 를 리턴
    
