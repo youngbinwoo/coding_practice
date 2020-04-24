@@ -240,7 +240,6 @@ class LinkedList:
         if pos<1 or pos>self.nodeCount:
             raise IndexError
         
-        curr=self.getAt(pos)
         # 앞쪽
         if pos==1:
             if self.nodeCount==1:
@@ -280,6 +279,7 @@ def solution(x):
     return 0
 
 
+* popAt 메서드에서 삭제되는 노드의 주위 링크를 올바르게 조절하지 못해서 오류가 계속 생겼었다.
 
 
        
