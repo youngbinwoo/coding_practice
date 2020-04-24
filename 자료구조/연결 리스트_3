@@ -131,6 +131,10 @@ def popAfter(self, prev): 와 def popAt(self, pos): 의 메서드 몸체만 구�
 IndexError exception 을 발생시키도록 합니다. 
 이렇게 하기 위한 코드는 raise IndexError 입니다.
 
+답)
+
+
+
 
     
  
