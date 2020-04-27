@@ -214,7 +214,10 @@ class LinkedList:
 
 def solution(x):
     return 0
-
+    
+   
+* 계속 안되고 있다가 뭐를 바꾼건지 모르겠는데 갑자기 됐다.
+원인이 뭘까? 찾아봐야겠다..
 
 
 
