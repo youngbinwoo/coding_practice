@@ -101,7 +101,7 @@ from doublylinkedlist import DoublyLinkedList
    -닫는 괄호: ) 또는 } 또는 ] -를 만나면:
     - 스택이 비어 있느면 올바르지 않은 수식
     - 스택에서 POP, 쌍을 이루는 여는 괄호인지 검사
-        맞지 않은면 올바르지 않은 수식
+       - 맞지 않은면 올바르지 않은 수식
         
    
    
