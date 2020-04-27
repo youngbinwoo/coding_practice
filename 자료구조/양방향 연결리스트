@@ -1,0 +1,129 @@
+1) 양방향 연결 리스트
+   한 쪽으로만 링크를 연결하지 말고, 양쪽으로! 
+   -> 앞으로도(다음 node) 뒤로도 (이전node) 진행 가능
+   
+   *Node의 구조를 확장해야함
+   
+     class Node:
+
+      def __init__(self, item):
+          self.data = item
+          self.prev = None
+          self.next = None
+          
+   * 리스트 처음과 끝에 dummy node를 두자
+     ->데이터를 담고 있는 node들은 모두 같음 모양
+     
+      class DoublyLinkedList:
+
+      def __init__(self):
+        self.nodeCount = 0
+        self.head = Node(None) #
+        self.tail = Node(None) #
+        self.head.prev = None
+        self.head.next = self.tail #
+        self.tail.prev = self.head #
+        self.tail.next = None
+        
+   * 리스트 순회
+     def traverse(self):
+        result = []
+        curr = self.head
+        while curr.next.next: #
+            curr = curr.next
+            result.append(curr.data)
+        return result
+        
+   * 리스트 역순회
+     def reverse(self):
+        result = []
+        curr = self.tail
+        while curr.prev.prev: #
+            curr = curr.prev
+            result.append(curr.data)
+        return result
+        
+   * 원소의 삽입     
+     L.insertAfter(prev,nexNode)
+     
+     next=prev.next라고 지정하여 양쪽 data를 모두 얻어낸다.
+     newNode.prev는 prev로 지정하고
+     newNode.next는 next로 지정한다.
+     이후, 기존의 rink를 끊는다
+     prev.next는 newNode로 둔다
+     next.prev는 newNode로 둔다
+     nodeCoun+=1
+     
+    def insertAfter(self, prev, newNode):
+        next = prev.next
+        newNode.prev = prev
+        newNode.next = next
+        prev.next = newNode
+        next.prev = newNode
+        self.nodeCount += 1
+        return True
+        
+   *특정 원소 얻어내기
+    def getAt(self, pos):
+    if pos < 0 or pos > self.nodeCount:
+        return None
+
+    if pos > self.nodeCount // 2:
+        i = 0
+        curr = self.tail
+        while i < self.nodeCount - pos + 1:
+            curr = curr.prev
+            i += 1
+        else:
+            i = 0
+            curr = self.head
+            while i < pos:
+                curr = curr.next
+                i += 1
+
+        return curr
+        
+        :만약 pos가 nodecount의 절반보다 뒤쪽이면 뒤쪽부터 찾아가는 코드를 구현한다.
+        
+        : 선형시간 알고리즘
+   
+   * 원소의 삽입
+     : 리스트 마지막에 원소를 삽입하면?
+     
+     
+   * 연습문제 - 양방향 연결 리스트 메서드 구현
+     
+     def insertBefore(self,next,newNode)
+     
+     def popAfter(self,prev)
+     def popBefore(self,next)
+     def popAt(self,pos)
+     
+     def concat(self,L)
+     
+     -> 맨 마지막 원소를 뽑는 것이 시간이 덜 걸린다.
+     
+     
+     
+     
+   
+
+     
+   
+     
+     
+     
+     
+     
+    
+        
+        
+     
+
+     
+   
+        
+        
+
+   
+   
