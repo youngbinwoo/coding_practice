@@ -33,3 +33,5 @@ def solution(L, x):
             X.append(-1)
     answer = X
     return answer
+    
+[출처: https://programmers.co.kr/learn/courses/57/lessons/13774 ]
