@@ -34,4 +34,6 @@ def solution(L, x, l, u):
         return solution(L,x,l,mid-1)
     else:
         return solution(L,x,mid+1,u)
+        
+[출처: https://programmers.co.kr/learn/courses/57/lessons/13777]
 
