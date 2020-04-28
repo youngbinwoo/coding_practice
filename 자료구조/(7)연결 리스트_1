@@ -101,6 +101,8 @@ class LinkedList:
 # 이 solution 함수는 그대로 두어야 합니다.
 def solution(x):
     return 0
+    
+[출처:https://programmers.co.kr/learn/courses/57/lessons/13779]
  
  
   
