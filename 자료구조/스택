@@ -103,133 +103,37 @@ from doublylinkedlist import DoublyLinkedList
     - 스택에서 POP, 쌍을 이루는 여는 괄호인지 검사
        - 맞지 않은면 올바르지 않은 수식
        
-문제 1) 
-양방향 연결 리스트 역방향 순회
-제 10 강에서 소개된 추상적 자료구조 DoublyLinkedList 에 대하여, 또한 강의 내용에서 언급한 reverse() 메서드를 구현하세요.
-이 reverse() 메서드는 양방향 연결 리스트를 끝에서부터 시작해서 맨 앞에 도달할 때까지 (tail 방향에서 head 방향으로) 순회하면서, 
-방문하게 되는 node 에 들어 있는 data item 을 순회 순서에 따라 리스트에 담아 리턴합니다.
-예를 들어, DoublyLinkedList L 에 들어 있는 노드들이 43 -> 85 -> 62 라면, 올바른 리턴 값은 [62, 85, 43] 입니다.
-이 규칙을 적용하면, 빈 연결 리스트에 대한 역방향 순회 결과로 reverse() 메서드라 리턴해야 할 올바른 결과는 [] 입니다.
-       
-답)
-class Node:
-
-    def __init__(self, item):
-        self.data = item
-        self.prev = None
-        self.next = None
-
-
-class DoublyLinkedList:
-
-    def __init__(self):
-        self.nodeCount = 0
-        self.head = Node(None)
-        self.tail = Node(None)
-        self.head.prev = None
-        self.head.next = self.tail
-        self.tail.prev = self.head
-        self.tail.next = None
-
-
-    def reverse(self):
-        ans=[]
-        curr=self.tail
-        while curr.prev.prev!=None:
-            curr=curr.prev
-            ans.append(curr.data)
-        return ans    
-
-
-    def getAt(self, pos):
-        if pos < 0 or pos > self.nodeCount:
-            return None
-
-        if pos > self.nodeCount // 2:
-            i = 0
-            curr = self.tail
-            while i < self.nodeCount - pos + 1:
-                curr = curr.prev
-                i += 1
-        else:
-            i = 0
-            curr = self.head
-            while i < pos:
-                curr = curr.next
-                i += 1
-
-        return curr
-
-
-    def insertAfter(self, prev, newNode):
-        next = prev.next
-        newNode.prev = prev
-        newNode.next = next
-        prev.next = newNode
-        next.prev = newNode
-        self.nodeCount += 1
-        return True
-
-
-    def insertAt(self, pos, newNode):
-        if pos < 1 or pos > self.nodeCount + 1:
-            return False
-
-        prev = self.getAt(pos - 1)
-        return self.insertAfter(prev, newNode)
-
-
-def solution(x):
-    return 0
-    
-문제 2)
-제 10 강에서 소개된 추상적 자료구조 DoublyLinkedList 의 메서드로 insertBefore() 를 구현하세요.
-이 insertBefore() 메서드에는 두 개의 인자가 주어지는데, next 는 어느 node 의 앞에 새로운 node 를 삽입할지를 지정하고,
-newNode 는 삽입할 새로운 node 입니다.
-강의 내용에서 소개된 insertAfter() 메서드의 구현과 매우 유사하게 할 수 있습니다.
+문제 1)
+수식의 괄호 검사 (스택)
+소괄호: ( )
+중괄호: { }
+대괄호: [ ]
+를 포함할 수 있는 수식을 표현한 문자열 expr 이 인자로 주어질 때, 
+이 수식의 괄호가 올바르게 여닫혀 있는지를 판단하는 함수 solution() 을 완성하세요.
+이 함수는 수식의 괄호가 유효하면 True 를, 그렇지 않으면 False 를 리턴합니다.
+스택을 활용하여 수식 내의 괄호 여닫음의 유효성을 검사하는 알고리즘에 대해서는 동영상 강의 내용을 참고하세요.
 
 답)
-class Node:
-
-    def __init__(self, item):
-        self.data = item
-        self.prev = None
-        self.next = None
-
-
-class DoublyLinkedList:
-
-    def __init__(self):
-        self.nodeCount = 0
-        self.head = Node(None)
-        self.tail = Node(None)
-        self.head.prev = None
-        self.head.next = self.tail
-        self.tail.prev = self.head
-        self.tail.next = None
-
-
-    def traverse(self):
-        result = []
-        curr = self.head
-        while curr.next.next:
-            curr = curr.next
-            result.append(curr.data)
-        return result
+def solution(expr):
+    match = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    }
+    S = ArrayStack()
+    for c in expr:
+        if c in '({[':
+	   S.push(c)
+        elif c in match:
+            if S.isEmpty():
+                return False
+            else:
+                t=S.pop()
+                if t != match[c]:
+                    return False
+    return S.isEmpty()
 
 
-    def insertBefore(self, next, newNode):
-        prev=next.prev
-        newNode.next=next
-        newNode.prev=prev
-        prev.next=newNode
-        next.prev=newNode
-        self.nodeCount+=1
-        return True
-        
-
-def solution(x):
-    return 0
 
 
     
