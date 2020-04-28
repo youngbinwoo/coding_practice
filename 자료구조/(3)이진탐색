@@ -42,3 +42,4 @@ def solution(L, x):
  for x in L 은 하나씩 다 비교해보기 때문에 효율성은 떨어지지만,, 통과 ~
  학교에서 배웠던 이진법~
  
+ [출처:https://programmers.co.kr/learn/courses/57/lessons/13775] 
