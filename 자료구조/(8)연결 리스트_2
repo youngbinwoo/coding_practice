@@ -281,6 +281,8 @@ def solution(x):
 
 * popAt 메서드에서 삭제되는 노드의 주위 링크를 올바르게 조절하지 못해서 오류가 계속 생겼었다.
 
+[출처:https://programmers.co.kr/learn/courses/57/lessons/13780]
+
 
        
        
