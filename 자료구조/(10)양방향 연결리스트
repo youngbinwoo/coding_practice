@@ -366,6 +366,13 @@ def solution(x):
 
 답)
 
+    def concat(self, L):
+        self.tail.prev.next=L.head.next
+        L.head.next.prev=self.tail.prev
+        self.tail=L.tail
+        self.nodeCount+=L.nodeCount
+        return L
+
 
 [출처:https://programmers.co.kr/learn/courses/57/lessons/13782]
 
