@@ -38,4 +38,39 @@
    
 6) 이중 연결 리스트로 큐를 구현   
 
+
+문제)
    
+   양방향 연결 리스트로 구현하는 큐
+   
+   양방향 연결 리스트를 활용하여 큐 (queue) 의 추상적 자료구조 (abstract data structure) 구현을 완성하세요.
+   정의하고자 하는 큐의 추상적 자료구조는 class LinkedListQueue 로 구현됩니다. 
+   이 문제는 해당 클래스의 메서드들의 구현을 빈칸 채우기 형태로 완성하는 것으로 되어 있으며, 
+   이 클래스의 구현은 L120 부터 시작합니다.
+   그 위에는 (LL1-117) 이 추상적 자료구조를 구현하기 위해서 이용할 class DoublyLinkedList 와,
+   또한 여기서 이용하는 class Node 의 구현이 정의되어 있습니다. 
+   이 코드는 이전의 양방향 연결 리스트 강의에서 다루어진 것과 완전히 동일합니다.
+   정확성 테스트는 class LinkedListQueue 의 각 메서드가 올바르게 구현되어 있는지를 검사합니다. 
+   코드 실행 을 눌렀을 때 예시 테스트 케이스를 통과하는 것은 아무런 의미가 없습니다.
+   
+답)
+
+class LinkedListQueue:
+    def __init__(self):
+        self.data = DoublyLinkedList()
+
+    def size(self):
+        return self.data.getLength()
+
+    def isEmpty(self):
+        return self.data.getLength()==0
+
+    def enqueue(self, item):
+        node = Node(item)
+        return self.data.insertAt(self.data.nodeCount+1, node)
+
+    def dequeue(self):
+        return self.data.popAt(1)
+
+    def peek(self):
+        return self.data.getAt(1).data
