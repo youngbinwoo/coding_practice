@@ -339,26 +339,32 @@ class DoublyLinkedList:
         return curr.data
     
     def popAt(self, pos):
-        if pos<1 or pos>self.nodeCount:
-            raise IndexError
-        if pos>self.nodeCount//2:
-            i=0
-            curr=self.tail
-            while i<=self.nodeCount-pos+1:
-                curr=curr.prev
-                i+=1
-            return self.popAfter(curr)
-        else:
-            i=0
-            curr=self.head
-            while i <=pos:
-                curr=curr.next
-                i+=1
-            return self.popBefore(curr)    
-
+          if pos<1 or pos>self.nodeCount:
+              raise IndexError
+          prev=self.getAt(pos-1)
+          curr=prev.next
+          next=curr.next
+          if pos>self.nodeCount//2:
+              return self.popAfter(prev)
+          else:
+              return self.popBefore(next) 
 
 def solution(x):
     return 0
+
+
+문제 4)
+
+     양방향 연결 리스트의 병합
+
+제 10 강에서 소개된 추상적 자료구조 DoublyLinkedList 에 대하여 
+두 개의 양방향 연결 리스트를 앞뒤로 이어 붙이는 메서드 concat() 을 구현하세요.
+예를 들어, 양방향 연결 리스트 L1 에는 1 -> 2 -> 3 의 원소가 순서대로 들어 있고, 
+또다른 양방향 연결 리스트 L2 에는 4 -> 5 의 순서로 원소가 들어 있을 때, 
+메서드 호출 L1.concat(L2) 의 결과로 L1 은 1 -> 2 -> 3 -> 4 -> 5 의 양방향 연결 리스트가 됩니다. 
+물론, L1 또는 L2 또는 둘 다가 비어 있는 양방향 연결 리스트인 경우도 고려되도록 코드를 작성해야 합니다.
+
+답)
 
 
 [출처:https://programmers.co.kr/learn/courses/57/lessons/13782]
