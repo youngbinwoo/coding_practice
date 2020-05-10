@@ -75,4 +75,4 @@ class LinkedListQueue:
     def peek(self):
         return self.data.getAt(1).data
         
-[출처:   https://programmers.co.kr/learn/courses/57/lessons/13860]      
+[출처: https://programmers.co.kr/learn/courses/57/lessons/13860]      
