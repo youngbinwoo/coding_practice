@@ -158,3 +158,5 @@ def solution(x):
 또한, solution() 함수는 테스트에 영향을 미치므로 수정하지 말고 그대로 두세요.
 
 답) 문제 2 답
+
+[출처: https://programmers.co.kr/learn/courses/57]
