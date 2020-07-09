@@ -1,4 +1,4 @@
-# practice_python_cording
+# practice_python
 
 
 'python cording pratice'
