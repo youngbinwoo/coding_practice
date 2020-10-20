@@ -64,3 +64,4 @@ print(문제(전체사람의수, 앉힐수있는최소사람수))
 
 
 출처 : https://gist.github.com/rintiantta/39e1aa642a25da30021343b30f6ccb0f
+        https://www.youtube.com/watch?v=594WmZdC_ts
