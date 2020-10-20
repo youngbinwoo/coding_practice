@@ -14,4 +14,28 @@
 문제의 정답은 1, 2, 3, 4, 5중 하나입니다.
 가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
 
+
+
+ans) 
+
+def solution(ans):
+    answer = [0,0,0]
+    pattern=[[1,2,3,4,5],[2,1,2,3,2,4,2,5],[3,3,1,1,2,2,4,4,5,5]]
+    
+    for i in range(len(pattern)):
+        for j in range(len(ans)):
+            if pattern[i][j]==ans[j]:
+                answer[i]=+1
+    
+    m_ans=max(answer)
+    max_ans=[(int(ans.index(m_ans))+1)]
+    return (max_ans)
+    
+solution([3,3,1])
+
+해결해야하는 문제: 
+  1. ans이 엄청 길게 나올때 어떻게 할 것인가?
+  2. answer이 모두 같게 나올때 어떻게 할 것인가? 
+  
+
 출처 : https://programmers.co.kr/learn/courses/30/lessons/42840
