@@ -1,4 +1,4 @@
-DATE_FORMAT(DATETYPE,'%Y-%m-%d') -> DATETYPE을 DATEF로 바꾸기
+DATE_FORMAT(DATETYPE,'%Y-%m-%d') -> DATETYPE을 DATEF로 바꾸기  v DATE_FORMAT
 
 
 문제 설명
