@@ -18,3 +18,10 @@ A350276	Cat	2017-08-13 13:50:00	Normal	Jewel	Spayed Female
 A350375	Cat	2017-03-06 15:01:00	Normal	Meo	Neutered Male
 A352555	Dog	2014-08-08 04:20:00	Normal	Harley	Spayed Female
 ..이하 생략
+
+
+
+
+답
+SELECT * FROM ANIMAL_INS
+ORDER BY  ANIMAL_ID
