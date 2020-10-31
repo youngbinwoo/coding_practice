@@ -17,25 +17,28 @@
 
 
 ans) 
-
 def solution(ans):
     answer = [0,0,0]
     pattern=[[1,2,3,4,5],[2,1,2,3,2,4,2,5],[3,3,1,1,2,2,4,4,5,5]]
+    r_ans=[]
     
     for i in range(len(pattern)):
         for j in range(len(ans)):
             if pattern[i][j]==ans[j]:
-                answer[i]=+1
-    
+                answer[i]=+1    
+                
     m_ans=max(answer)
-    max_ans=[(int(ans.index(m_ans))+1)]
-    return (max_ans)
     
-solution([3,3,1])
+    for i in range(len(answer)):
+        if m_ans==answer[i]:
+            r_ans.append(i+1)        
+            
+    return (r_ans)
+
 
 *해결해야하는 문제: 
   1. ans이 엄청 길게 나올때 어떻게 할 것인가?
-  2. answer이 모두 같게 나올때 어떻게 할 것인가? 
+  2. answer이 모두 같게 나올때 어떻게 할 것인가?  ok
   
 
 출처 : https://programmers.co.kr/learn/courses/30/lessons/42840
