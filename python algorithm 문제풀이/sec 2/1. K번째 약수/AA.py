@@ -1,7 +1,7 @@
 import sys
 sys.stdin=open("input.txt", "rt")
 
-N,K =map(ins,input().split())
+N,K =map(int,input().split())
 
 
 ans=[]
