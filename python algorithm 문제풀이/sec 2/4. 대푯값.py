@@ -24,6 +24,31 @@ for i in range(n):
         break
 
 
+__________________________________________
+
+import sys
+sys.stdin=open("input.txt", "rt")
+
+min=2139394
+
+n=int(input())
+num=list(map(int,input().split()))
+
+avg=sum(num)/n
+avg=avg+0.5
+avg=int(avg)
+
+for idx,x in enumerate(num):
+    tmp=abs(x-avg)
+    if tmp<min:
+        min=tmp
+        score=x
+        res=idx+1
+    elif tmp==min:
+        if x>score:
+            score=x
+            res=idx+1
+print(avg,res)
 
 
 
