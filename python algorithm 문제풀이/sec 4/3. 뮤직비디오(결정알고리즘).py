@@ -9,18 +9,20 @@ lt=sum(num)
 
 def Cnt(M):
     cnt=1
-    ans=[]
-    for i in range(n):
-        ans.append(num[i])
-        if sum(ans)>M:
+    ans=0
+    for i in num:
+        if ans+i>M:
             cnt+=1
-            ans=[num[i]]
+            ans=i
+        else: 
+            ans+=i
     return cnt
 
+maxx=max(num)
 res=0
 while rt<=lt:
     M=(rt+lt)//2
-    if Cnt(M)<=m:
+    if M>=maxx and Cnt(M)<=m:
         res=M
         lt=M-1
     else:
