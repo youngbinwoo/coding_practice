@@ -1,4 +1,4 @@
-# python cording pratice
+# python coding pratice
 
 
 ## 1. Basic algorithm [Folder](https://github.com/youngbinwoo/practice_python/tree/master/Algorithm_Basic)
