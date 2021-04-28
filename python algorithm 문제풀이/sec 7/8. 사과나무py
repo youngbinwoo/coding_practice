@@ -1,0 +1,32 @@
+import sys
+from collections import deque
+sys.stdin=open("input.txt", "r")
+
+dx=[-1,0,+1,0]
+dy=[0,1,0,-1]
+q=deque()
+n=int(input())
+app=[]
+ch=[]
+for i in range(n):
+    app.append(list(map(int,input().split())))
+ch=[[0]*n for _ in range(n)]
+q.append((n//2,n//2))
+L=0
+s=0
+
+
+while q:
+    if L==n//2:
+        break
+    a=len(q)
+    for _ in range(a):
+        now=q.popleft()
+        for j in range(4):
+            if ch[now[0]+dx[j]][now[1]+dy[j]]==0:
+                s+=app[now[0]+dx[j]][now[1]+dy[j]]
+                ch[now[0]+dx[j]][now[1]+dy[j]]=1
+                q.append((now[0]+dx[j],now[1]+dy[j]))
+    L+=1
+
+print(s)
