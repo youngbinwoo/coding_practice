@@ -1,0 +1,32 @@
+def mn(i,n):
+    rnum=[]
+    while i>-1:
+        rnum.append(i%n)
+        i=i//n
+        if i==0:
+            break
+    rnum.reverse()
+    return rnum
+    
+def solution(n, t, m, p):
+    num=[]
+    ans=''
+    N=0
+    for i in range(m*t):
+        num+=mn(i,n)
+    for x in range(p-1,m*t,m):
+        if num[x]<10:
+            ans+=str(num[x])
+        elif num[x]==10:
+            ans+='A'
+        elif num[x]==11:
+            ans+='B'
+        elif num[x]==12:
+            ans+='C'
+        elif num[x]==13:
+            ans+='D'
+        elif num[x]==14:
+            ans+='E'
+        else:
+            ans+='F'      
+    return ans
