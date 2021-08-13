@@ -1,0 +1,29 @@
+def solution(msg):
+    d={}
+    A=''
+    ans=[]
+    for i in range(1,27):
+        d[chr(i+64)]=i
+    msg=list(map(str,msg))
+    q=[]
+    q.append(msg[0])
+    
+    while q:
+        A=q.pop(0)
+        msg.pop(0) 
+        if len(msg)==0:
+            ans.append(d.get(A))
+            break   
+        for i in range(len(msg)):
+            if A+msg[i] not in d:
+                ans.append(d.get(A))
+                d[A+msg[i]]=len(d)+1
+                msg=msg[i:]
+                q.append(msg[0])
+                break
+            else:
+                A=A+msg[i]
+            if i==len(msg)-1:
+                ans.append(d.get(A))
+                
+    return ans
