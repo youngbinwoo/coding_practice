@@ -1,0 +1,70 @@
+import itertools
+def solution(ee):
+    s=[]
+    e=[]
+    A=-1
+    for i in range(len(ee)):
+        if ee[i]=="+" or ee[i]=='-' or ee[i]=="*":
+            e.append(ee[A+1:i])
+            e.append(ee[i])
+            s.append(ee[i])
+            A=i
+    e.append(ee[A+1:])
+    s=list(set(s))
+    r_s=list(itertools.permutations(s, len(s)))
+    
+    for j in range(len(r_s)):
+        a=decision(0,r_s[j],e)
+    return a
+        
+
+
+ans=0
+Max=-1234
+def decision(L,r_s,e):
+    global ans,Max
+    A=-1
+    C=0
+    r_e=[]
+    if L==len(r_s):
+        if abs(e[0])>Max:
+            Max=abs(e[0])
+        return Max
+    else:
+        for j in range(len(e)):
+            if e[j]==r_s[L]:
+                if r_s[L]=='+':
+                    A=j+1
+                    if j==C+2:
+                        B=int(r_e[-1])+int(e[j+1])
+                        r_e.pop()
+                    else:
+                        r_e.pop()
+                        B=int(e[j-1])+int(e[j+1])
+                    r_e.append(B)
+                    C=j
+                elif r_s[L]=='-':
+                    A=j+1
+                    if j==C+2:
+                        B=int(r_e[-1])-int(e[j+1])
+                        r_e.pop()
+                    else:
+                        r_e.pop()
+                        B=int(e[j-1])-int(e[j+1])
+                    r_e.append(B)
+                    C=j
+                elif r_s[L]=='*':
+                    A=j+1
+                    if j==C+2:
+                        B=int(r_e[-1])*int(e[j+1])
+                        r_e.pop()
+                    else:
+                        r_e.pop()
+                        B=int(e[j-1])*int(e[j+1])
+                    r_e.append(B)
+                    C=j
+            else:
+                if j!=A:
+                    r_e.append(e[j])
+    decision(L+1,r_s,r_e)
+    return Max
