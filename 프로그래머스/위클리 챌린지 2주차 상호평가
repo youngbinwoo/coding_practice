@@ -1,0 +1,44 @@
+def solution(scores):
+    num=[]
+    r_num=[]
+    for i in range(len(scores)):
+        s=0
+        Max=-1
+        Min=200
+        A=scores[i][i]
+        cnt=0
+        r_cnt=0
+        for j in range(len(scores[0])):
+            s+=scores[j][i]
+            if scores[j][i]>Max:
+                cnt=0
+                Max=scores[j][i]
+            if scores[j][i]<Min:
+                r_cnt=0
+                Min=scores[j][i]
+            if scores[j][i]==Max:
+                cnt+=1
+            if scores[j][i]==Min:
+                r_cnt+=1
+        if A==Max and cnt==1:
+            ans=(s-A)/(len(scores[0])-1)
+            num.append(ans)
+        elif A==Min and r_cnt==1:
+            ans=(s-A)/(len(scores[0])-1)
+            num.append(ans)
+        else:
+            ans=s/len(scores[0])
+            num.append(ans) 
+            
+    for i in range(len(num)):    
+        if num[i]>=90:
+            r_num.append('A')
+        elif num[i]>=80:
+            r_num.append('B')
+        elif num[i]>=70:
+            r_num.append('C')
+        elif num[i]>=50:
+            r_num.append('D')
+        else:
+            r_num.append('F')
+    return ''.join(map(str,r_num))
