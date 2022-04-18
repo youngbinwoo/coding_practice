@@ -1,0 +1,4 @@
+SELECT IF(Grade<8,NULL,NAME),Grade,Marks
+FROM Students JOIN Grades
+WHERE Marks Between Min_mark and Max_mark
+ORDER BY Grade DESC, NAME
