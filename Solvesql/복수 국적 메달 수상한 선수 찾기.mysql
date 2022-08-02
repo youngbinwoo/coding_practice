@@ -1,0 +1,13 @@
+SELECT a.name
+FROM records r left join games g
+                    on r.game_id = g.id
+               left join teams t 
+                    on r.team_id = t.id
+               left join events e
+                    on r.event_id = e.id
+               left join athletes a
+                    on r.athlete_id = a.id
+where g.year >= '2000' and medal is not null
+group by r.athlete_id
+having count(distinct team)>1
+order by a.name 
