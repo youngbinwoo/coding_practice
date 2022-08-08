@@ -1,0 +1,9 @@
+select a.employee_id as mentee_id,
+      a.name as mentee_name,
+      b.employee_id as mentor_id,
+      b.name as mentor_name
+from employees a, employees b
+where a.join_date between '2021-09-31' and '2021-12-31'
+and b.join_date <='2019-12-31'
+and a.department!=b.department
+order by mentee_id asc, mentor_id asc
